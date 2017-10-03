@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import Button from 'apsl-react-native-button';
-import { AppRegistry, StyleSheet, Text, View, Image } from 'react-native';
+import { AppRegistry, StyleSheet, Text, View, Image, Alert, ScrollView } from 'react-native';
+import { Reddit } from './src/reddit';
 
 export default class HongZhou4U extends Component {
   render() {
     return (
-      <LinearGradient colors={['#0069B1', '#000000']} style={styles.container}>
-        <Image source={require('./img/hongZhou.png')} />
-        <Text style={styles.welcome}>MostRecentCommentHere</Text>
-        <Image source={require('./img/BarrySanders.png')} />
-        <Button style={styles.button} textStyle={styles.buttonText} children={'MVP SAYS'} />
-      </LinearGradient>
+      <ScrollView>
+        <LinearGradient colors={['#0069B1', '#000000']} style={styles.container}>
+          <Image style={styles.hong} source={require('./img/hongZhou.png')} />
+          <Text style={styles.welcome}>😍#1 off the field. #1 in our hearts😍</Text>
+          <Image source={require('./img/BarrySanders.png')} />
+          <Reddit />
+          <Image style={{ width: 250, height: 250 }} source={{ uri: 'https://i.imgur.com/e2AABBU.png' }} />
+        </LinearGradient>
+      </ScrollView>
     );
   }
 }
@@ -42,8 +46,7 @@ const styles = StyleSheet.create({
     color: '#a2aaad'
   },
   hong: {
-    width: 300,
-    height: 40
+    marginTop: 20
   }
 });
 
